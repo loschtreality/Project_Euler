@@ -5,16 +5,16 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 
-def even_fib
+def even_fib(n)
   fib_start = 1
   fib_prev = 1
-  total_fib = 0
+  total_fib = fib_prev + fib_start
   evens_total = 0
-  while total_fib < 4_000_000
-    evens_total += total_fib if total_fib.even?
-    total_fib = fib_start + fib_prev
-    fib_prev = fib_start
-    fib_start = total_fib
+  while total_fib < n
+    evens_total += total_fib
+    fib_prev = fib_start + total_fib
+    fib_start = fib_prev + total_fib
+    total_fib = fib_prev + fib_start
   end
   evens_total
 end

@@ -4,19 +4,18 @@
 // #
 // # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-function even_fib() {
+function even_fib(n) {
   var fib_start = 1
   var fib_prev = 1
-  var total_fib = 0
+  var total_fib = fib_start + fib_prev
   var evens_total = 0
 
-  while (total_fib < 4000000) {
-    if (total_fib % 2 === 0) {
-      evens_total += total_fib
-    }
-    total_fib = fib_start + fib_prev
-    fib_prev = fib_start
-    fib_start = total_fib
+  while (total_fib < n) {
+    evens_total += total_fib
+    fib_prev = total_fib + fib_start
+    fib_start = fib_prev + total_fib
+    total_fib = fib_prev + fib_start
   }
+
   return evens_total
 }
