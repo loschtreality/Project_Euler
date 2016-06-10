@@ -7,6 +7,15 @@
 // Find the product abc.
 
 
-function special_poth() {
+function special_poth(number) {
 
+  for (var c = 1; c < number; c++) {
+    for (var b = 1; b < c; b++) {
+      for (var a = 0; a <b; a++) {
+        if ((a+b+c) === number && (Math.pow(a,2) + Math.pow(b,2) === Math.pow(c,2))) {
+          return a * b * c
+        }
+      }
+    }
+  }
 }
