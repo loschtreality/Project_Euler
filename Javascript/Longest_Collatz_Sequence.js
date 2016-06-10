@@ -44,5 +44,3 @@ function collatz_search(n) {
 
   return max_collatz
 }
-
-console.log(collatz_search(1000000));
