@@ -31,6 +31,8 @@ def product(array)
     array.inject(&:*)
 end
 
+
+# Down-Across
 def dA_max(array, adjacent)
     max = 0
     i = 0
@@ -46,7 +48,7 @@ def dA_max(array, adjacent)
     max
 end
 
-
+# Diagonals Right
 def diag_max_R(grid, adjacent)
     max = 0
     i = 0
@@ -71,7 +73,7 @@ end
 
 
 
-
+# Diagonals Left
 def diag_max_L(grid, adjacent)
     max = 0
     i = 0
