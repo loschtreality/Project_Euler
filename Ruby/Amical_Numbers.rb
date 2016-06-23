@@ -8,25 +8,25 @@
 # if friend(i) == outcome && amigo(outcome) == i
 
 def divisor_sum(n)
-  divs = []
+  sum = 1
 
-  (1..(n-1)).each do |i|
-    divs << i if n % i == 0
+  (2..(n-1)).each do |i|
+    sum += i if n % i == 0
   end
 
-  divs.inject(&:+)
+  sum
 end
 
 
 def amicable_sum(n)
-  amis = []
+  amis = 0
   (2..(n-1)).each do |i|
     friend = divisor_sum(i)
     amigo = divisor_sum(friend)
 
-    amis << friend if amigo == i && i != friend
+    amis += friend if amigo == i && i != friend
 
   end
 
-  amis.inject(&:+)
+  amis
 end
