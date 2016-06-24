@@ -21,6 +21,3 @@ def name_score(text_F)
 
   score
 end
-
-
-p name_score(TEXT)
